@@ -76,4 +76,17 @@ func TestAll(t *testing.T) {
 		}
 
 	})
+
+	t.Run("Wallet system using pointers", func(t *testing.T) {
+		w := Wallet{}
+		// explicitly making it call by reference.
+		deposit(&w, 20)
+		// explicitly making it call by reference.
+		bal := balance(&w)
+		req := 20
+
+		if bal != req {
+			t.Errorf("expected '%d' but got '%d'", req, bal)
+		}
+	})
 }
