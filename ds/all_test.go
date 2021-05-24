@@ -55,4 +55,25 @@ func TestAll(t *testing.T) {
 		}
 
 	})
+
+	t.Run("test Perimeter Rectangle", func(t *testing.T) {
+		rec := Rectangle{10, 6}
+		perm := Perimeter(rec)
+		requiredPerm := 32.0
+
+		if !reflect.DeepEqual(perm, requiredPerm) {
+			t.Errorf("expected '%f' but got '%f'", requiredPerm, perm)
+		}
+	})
+
+	t.Run("test Area Rectangle", func(t *testing.T) {
+		rec := Rectangle{10, 6}
+		area := Area(rec)
+		requiredArea := 60.0
+
+		if !reflect.DeepEqual(area, requiredArea) {
+			t.Errorf("expected '%f' but got '%f'", requiredArea, area)
+		}
+
+	})
 }
