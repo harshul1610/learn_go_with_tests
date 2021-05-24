@@ -58,7 +58,7 @@ func TestAll(t *testing.T) {
 
 	t.Run("test Perimeter Rectangle", func(t *testing.T) {
 		rec := Rectangle{10, 6}
-		perm := Perimeter(rec)
+		perm := rec.Perimeter()
 		requiredPerm := 32.0
 
 		if !reflect.DeepEqual(perm, requiredPerm) {
@@ -68,7 +68,7 @@ func TestAll(t *testing.T) {
 
 	t.Run("test Area Rectangle", func(t *testing.T) {
 		rec := Rectangle{10, 6}
-		area := Area(rec)
+		area := rec.Area()
 		requiredArea := 60.0
 
 		if !reflect.DeepEqual(area, requiredArea) {

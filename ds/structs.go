@@ -5,10 +5,10 @@ type Rectangle struct {
 	Height float64
 }
 
-func Perimeter(rec Rectangle) float64 {
+func (rec Rectangle) Perimeter() float64 {
 	return 2 * (rec.Width + rec.Height)
 }
 
-func Area(rec Rectangle) float64 {
+func (rec Rectangle) Area() float64 {
 	return rec.Width * rec.Height
 }
